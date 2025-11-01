@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Letter!</title>
+  <style>
+    body{
+            background: 
+                        url(frog1.png)repeat,
+                        linear-gradient(#baeb99,#e2f5a4);
+            background-size: 90px,50px,cover;
+            text-align: center;
+             margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Poppins", sans-serif;
+    }
+    .box {
+      background: #e2f5a4;
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px #baeb99;
+      text-align: center;
+      max-width: 320px;
+      width: 100%;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 2px solid #3b4235;
+      border-radius: 10px;
+      outline: none;
+      font-size: 1em;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #e2f5a4;
+      box-shadow: 0 0 8px #e2f5a4;
+    }
+
+    button {
+      margin-top: 20px;
+      background: #baeb99;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #baeb99;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+   <div class="box">
+    <h1>Welcome!</h1>
+    <label for="username">Enter your name:</label><br /><br />
+    <input type="text" id="username" placeholder="Your name..." />
+    <br />
+    <button id="continueBtn">Continue</button>
+  </div>
+
+  <script>
+    const button = document.getElementById("continueBtn");
+    const input = document.getElementById("username");
+
+    button.addEventListener("click", () => {
+      const name = input.value.trim();
+
+      if (name) {
+        localStorage.setItem("username", name);
+        window.location.href = "mail.html";
+      } else {
+        alert("Please enter your name first!");
+      }
+    });
+  </script>
+
+</body>
+</html>

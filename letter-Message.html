@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Letter 💚</title>
+<style>
+  body {
+    background:
+      url(frog1.png) repeat,
+      linear-gradient(#baeb99, #e2f5a4);
+    background-size: 100px, 100px, cover;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .letter-wrapper {
+    position: relative;
+    width: 350px;
+  }
+
+  .letter-img {
+    width: 100%;
+    display: block;
+  }
+
+  .text-overlay {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    text-align: center;
+    color: #3b4235;
+    font-size: 0.95rem;
+  }
+
+  .text-overlay small {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #4f5a43;
+  }
+</style>
+</head>
+<body>
+  <div class="letter-wrapper">
+    <!-- use your own letter image -->
+    <img src="letter2.png" alt="Opened Letter" class="letter-img">
+    <div class="text-overlay" id="textBox"></div>
+  </div>
+
+  <script>
+    const username = localStorage.getItem('username') || "You";
+    const affirmations = [
+      "You are learning to trust your own timing. The world may rush, but you are allowed to move slow, to breathe between steps, and to let life unfold without panic. Everything you’re reaching for is already on its way to you, aligning in the background while you learn patience.",
+      "You don’t have to have it all figured out to keep going. Uncertainty doesn’t mean failure — it means you’re exploring, alive, curious. Every small choice you make, even the unsure ones, are tiny acts of courage building your story.",
+      "You are not behind; you are building quietly. The progress that no one sees — the effort, the discipline, the self-reflection — that’s where your future is forming. Keep showing up, even when it feels invisible.",
+      "You carry a kind of strength that doesn’t always look loud. It’s in the way you keep going after being misunderstood, in the way you rebuild after things fall apart, in how you still choose kindness when bitterness would be easier.",
+      "You are allowed to rest without guilt. Productivity is not your worth; peace is. Sometimes the most powerful thing you can do is pause, breathe, and trust that the world won’t crumble while you care for yourself.",
+      "You can outgrow things that once felt like home. People, routines, mindsets — they all shift, and that’s okay. You’re allowed to walk away from what no longer feels aligned, even if it once made you happy.",
+      "You don’t have to shrink to be accepted. You were not made to fit into small versions of yourself just to make others comfortable. You were made to expand, to take up space, to be seen fully.",
+      "You are doing the hard work of becoming. Some days it feels like standing still, but growth often hides in quiet moments — the ones where you choose patience, forgiveness, or hope, even when it’s difficult.",
+      "You are allowed to be proud of yourself. Even for the small things — waking up when you didn’t want to, trying again after failing, showing compassion when you could’ve turned cold. These are not small victories.",
+      "You don’t have to rush healing. It’s not a checklist. It’s a slow unraveling, a relearning of how to exist without the weight of what hurt you. Take your time — real peace doesn’t come from speed, it comes from softness.",
+      "You are not a burden for needing time, help, or space. Asking for support is not weakness; it’s trust. You are human, and humans are meant to lean sometimes.",
+      "You can love who you’re becoming without hating who you were. Both versions of you did their best with what they knew. That’s what growth really is — gentle acceptance of your own evolution.",
+      "You are allowed to be excited about small beginnings. Every great thing you admire once started quietly, with one person daring to try. You’re doing that now, and it matters more than you think.",
+      "You are enough, even when you’re not achieving. Even when you’re still figuring it out, even when you feel uncertain. Your worth was never meant to be measured by output.",
+      "You are allowed to be at peace with not knowing what’s next. Control is comforting, but mystery often holds better gifts than you can imagine. Let it surprise you.",
+      "You don’t have to compare your path to anyone else’s. Your story will bloom differently — and that’s its magic. You’re not late, you’re unique.",
+      "You are allowed to rebuild yourself from the ground up. You can start again without shame, design a life that feels like you, and let go of the pieces that no longer belong.",
+      "You are stronger than your worst days. Even when you thought you couldn’t make it, you did. That quiet resilience — that’s your power, and it’s permanent.",
+      "You are allowed to take up joy without earning it first. You don’t need a reason to smile or a goal to deserve rest. Life doesn’t always need justification to be enjoyed.",
+      "You are not lost; you are simply in the middle of the story. The confusion, the waiting, the rebuilding — it’s all part of the becoming. Keep turning the page."
+    ];
+    const randomMsg = affirmations[Math.floor(Math.random()*affirmations.length)];
+    const today = new Date().toLocaleString();
+
+    const box = document.getElementById('textBox');
+    box.innerHTML = `
+      <small>${today}</small>
+      <p>Dear <strong>${username}</strong>,</p>
+      <p>${randomMsg}</p>
+    `;
+  </script>
+</body>
+</html>
